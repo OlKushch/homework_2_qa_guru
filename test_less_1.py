@@ -1,9 +1,12 @@
 from selene.support.shared import browser
 from selene import be, have
 import pytest
+from selenium import webdriver
 
 @pytest.fixture
 def browser_test():
+    driver = webdriver.Chrome()
+    browser.config.driver = driver
     browser.config.window_width = 750
     browser.config.window_height = 900
 
